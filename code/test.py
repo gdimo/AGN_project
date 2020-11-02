@@ -4,4 +4,8 @@ print("Hello World")
 
 print("check git")
 
-print("test VS code")
+print("test VS code Windows")
+print("OK")
+
+print("test VS code Linux")
+print("OK")
