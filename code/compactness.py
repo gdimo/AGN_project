@@ -670,7 +670,7 @@ plt.rcParams['ytick.right'] = True
 # Build the tables
 bin_meanu1 = np.array([-1.032, -0.963, -0.740, -1.014, -1.037])
 bin_centersu1 = np.array([0.83, 1.39, 1.66, 1.93, 2.42])
-bin_widthu1 = np.array([0.12, 0.15, 0.15, 0.15, 0.6])
+bin_widthu1 = np.array([0.24, 0.3, 0.3, 0.3, 1.2])
 bin_stdu1 = np.array([0.116, 0.08, 0.061, 0.067, 0.052])   
 ax2.plot(bin_meanu1,bin_centersu1,'ks',ms=10,label='KM sources')
 ax2.errorbar(bin_meanu1,bin_centersu1,
@@ -713,4 +713,4 @@ ax2.set_xlabel(r'$\Theta$ ($kT_e/mc^2$)',fontsize=14)
 ax2.legend(loc=1, fontsize=14)
 
 fig.tight_layout()
-fig.savefig('../figures/compac_all.pdf', dpi=400)
+fig.savefig('./figures/compac_all.pdf', dpi=400)
