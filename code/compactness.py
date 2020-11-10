@@ -657,16 +657,30 @@ plt.rcParams['xtick.top'] = True
 plt.rcParams['ytick.right'] = True
 
 #------------WE SHOULD CREATE KM POINTS FOR THESE POINTS
-#ax2.plot(bin_meanu1,bin_centersu1,'ks',ms=10,label='All sources')
-#ax2.errorbar(bin_meanu1,bin_centersu1,
-#         xerr=bin_stdu1,
-#         yerr=bin_widthu1,
-#         fmt='k,',
-#         capsize=3,
-#         ecolor='k',
-#         elinewidth=0.5
-#         )
-#------ END OF KM POINTS-------------------------
+#We will create a table of the values that will be used and then assign them to the varieables plotted
+#   _______________________________________________
+#   | x(theta)    |   y(compact)            |   range          |
+#   |   -1.032 +/0.116   |      0.83         |     0.31 -- 1.22        |
+#   |   -0.963 +/- 0.008   |     1.39          |    1.22 -- 1.48         |
+#   |   -0.740 +/- 0.061      |   1.66    |  1.50 -- 1.80  |
+#   |   -1.014 +/- 0.067    |    1.93    |   1.81 -- 2.1   |
+#   |    -1.037 +/- 0.052   |  2.42   |   2.1 -- 3.38   |
+#  
+# Build the tables
+bin_meanu1 = np.array([-1.032, -0.963, -0.740, -1.014, -1.037])
+bin_centersu1 = np.array([0.83, 1.39, 1.66, 1.93, 2.42])
+bin_widthu1 = np.array([0.12, 0.15, 0.15, 0.15, 0.6])
+bin_stdu1 = np.array([0.116, 0.08, 0.061, 0.067, 0.052])   
+ax2.plot(bin_meanu1,bin_centersu1,'ks',ms=10,label='KM sources')
+ax2.errorbar(bin_meanu1,bin_centersu1,
+         xerr=bin_stdu1,
+         yerr=bin_widthu1,
+         fmt='k,',
+         capsize=3,
+         ecolor='k',
+         elinewidth=0.5
+         )
+------ END OF KM POINTS-------------------------
 ax2.plot(bin_meanu2,bin_centersu2,'ko',ms=10,mfc='none',label='Only Detections')
 ax2.errorbar(bin_meanu2,bin_centersu2,
          xerr=bin_stdu2,
@@ -698,4 +712,4 @@ ax2.set_xlabel(r'$\Theta$ ($kT_e/mc^2$)',fontsize=14)
 ax2.legend(loc=1, fontsize=14)
 
 fig.tight_layout()
-fig.savefig('../figures/paper/compac_all.pdf', dpi=400)
+fig.savefig('../figures/compac_all.pdf', dpi=400)
