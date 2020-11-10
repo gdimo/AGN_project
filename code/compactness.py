@@ -10,7 +10,7 @@ import numpy as np
 from scipy import stats
 #Load data files
 
-all_tbl = Table.read('../data/new_data_all/ALL_TABLE.csv', format='csv')
+all_tbl = Table.read('../data/ALL_TABLE.csv', format='csv')
 
 #-----------------------------------------------------------------------------
 #Define useful formulas
