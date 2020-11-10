@@ -10,7 +10,7 @@ import numpy as np
 from scipy import stats
 #Load data files
 
-all_tbl = Table.read('../data/ALL_TABLE.csv', format='csv')
+all_tbl = Table.read("../data/all_table.csv", format='csv')
 
 #-----------------------------------------------------------------------------
 #Define useful formulas
@@ -406,6 +406,7 @@ print('FOR Detections DATA COMPACTNESS DONE')
 bin_meanu3, bin_edgesu3, binnumberu3 = stats.binned_statistic(u3,w3,'mean',bins=5)
 bin_stdu3, bin_edgesu3, binnumberu3 = stats.binned_statistic(u3,w3,'std',bins=5)
 
+
 bin_widthu3 = (bin_edgesu3[1] - bin_edgesu3[0])/2
 bin_centersu3 = bin_edgesu3[1:] - bin_widthu3
 
@@ -482,131 +483,131 @@ bin_centersu4 = bin_edgesu4[1:] - bin_widthu4
 #plt.errorbar(ric['theta'],ric['lc'],
 #         xerr=[(ric['theta']-ric['theta_l']),(ric['theta_u']-ric['theta'])],
 #         yerr=[(ric['lc']-ric['lc_l']),(ric['lc_u']-ric['lc'])],
+##         fmt='k,',
+##         capsize=3,
+##         ecolor='k',
+##         elinewidth=0.5,
+##         )
+##
+###plt.plot(x2,y2,marker='o',mec='grey',mfc='none',linestyle='none',label='Detection points')
+###plt.plot(x4,y4,marker='^',mec='grey',mfc='none',linestyle='none',label='Low Limit points')
+##
+##plt.plot(np.log10(hem['theta']),np.log10(hem['lc']),'g-',linewidth=2.0,label='Hemishpere')
+##
+##
+##
+##plt.legend(fontsize=15) 
+##plt.ylabel('Compactness')
+##plt.xlabel(r'$\Theta$ $keV/mc^2$')
+##plt.tight_layout()
+##
+##plt.show()   
+##
+#
+##---------------------------------------------------------------
+##----------DUAL AXES plot---------------------------------------
+##---------------------------------------------------------------
+##fig, [ax1, ax2] = plt.subplots(1,2,figsize=(9,3))
+#
+#plt.figure(figsize=(10,8))
+#plt.rcParams['xtick.top'] = True
+#plt.rcParams['ytick.right'] = True
+#
+#plt.plot(go_tbl['theta'],go_tbl['lcom'],'ks',ms=6,mec='k',mfc='k',label=r'Constrained $kT_e$')
+#plt.errorbar(go_tbl['theta'],go_tbl['lcom'],
+#                xerr=[(go_tbl['theta']-go_tbl['theta_l']),(go_tbl['theta_h']-go_tbl['theta'])],
+#                yerr=False,
+#                fmt='none',
+#                capsize=3,
+#                ecolor='k',
+#                elinewidth=0.5
+#                )
+#
+#plt.plot(lo_tbl['theta'],lo_tbl['lcom'],'ko',ms=7,mec='k',mfc='none',label=r'Unconstrained $kT_e$')
+#plt.errorbar(lo_tbl['theta'],lo_tbl['lcom'],
+#                xerr=lo_tbl['theta']/2,
+#                xlolims=True,
+#                yerr=False,
+#                fmt='none',
+#                capsize=3,
+#                ecolor='k',
+#                elinewidth=0.5
+#                )
+#
+##ax1.plot(trialtheta,brem,'b--')
+##ax1.plot(trialtheta,elpr,'r--',label=r'$e^--p^+$')
+##ax1.plot(trialtheta,elel,'y--',label=r'$e^--e^-$')
+##plt.plot(trialtheta,lsven,'b:',label='Svensson')
+#plt.plot(hem['theta'],hem['lc'],'g--',linewidth=2.0,label='Hemisphere')
+#plt.plot(slab['theta'],slab['lc'],'r--',linewidth=2.0,label='Slab')
+#
+#plt.xticks(fontsize=15, rotation=0)
+#plt.yticks(fontsize=15, rotation=0)
+#plt.ylabel('Compactness (l)',fontsize=14)
+#plt.xlabel(r'$\Theta$ ($kT_e/mc^2$)',fontsize=14)
+#plt.xscale('log')
+#plt.yscale('log')
+#plt.xlim(0.01,1.1)
+#plt.ylim(0.1,1000)
+#
+#plt.legend(loc=4, fontsize=14)
+#plt.tight_layout()
+#plt.savefig('../figures/paper/compac_scatter.pdf', dpi=400)
+##-------------------------------------------------------------------
+##       BIN
+##--------------------------------------------------------------------------
+#plt.figure(figsize=(10,8))
+#plt.rcParams['xtick.top'] = True
+#plt.rcParams['ytick.right'] = True
+#plt.plot(bin_meanu1,bin_centersu1,'ks',ms=10,label='All sources')
+#plt.errorbar(bin_meanu1,bin_centersu1,
+#         xerr=bin_stdu1,
+#         yerr=bin_widthu1,
+#         fmt='k,',
+#         capsize=3,
+#         ecolor='k',
+#         elinewidth=0.5
+#         )
+#
+#plt.plot(bin_meanu2,bin_centersu2,'ko',ms=10,mfc='none',label='Only Detections')
+#plt.errorbar(bin_meanu2,bin_centersu2,
+#         xerr=bin_stdu2,
+#         yerr=bin_widthu2,
+#         fmt='k,',
+#         capsize=3,
+#         ecolor='k',
+#         elinewidth=0.5
+#         )
+#
+#plt.plot(ric['theta'],ric['lc'],'kD',ms=10,mfc='k',label='Ricci+18')
+#plt.errorbar(ric['theta'],ric['lc'],
+#         xerr=[(ric['theta']-ric['theta_l']),(ric['theta_u']-ric['theta'])],
+#         yerr=[(ric['lc']-ric['lc_l']),(ric['lc_u']-ric['lc'])],
 #         fmt='k,',
 #         capsize=3,
 #         ecolor='k',
 #         elinewidth=0.5,
 #         )
 #
-##plt.plot(x2,y2,marker='o',mec='grey',mfc='none',linestyle='none',label='Detection points')
-##plt.plot(x4,y4,marker='^',mec='grey',mfc='none',linestyle='none',label='Low Limit points')
+#plt.plot(np.log10(hem['theta']),np.log10(hem['lc']),'g--',linewidth=2.0,label='Hemisphere')
+#plt.plot(np.log10(slab['theta']),np.log10(slab['lc']),'r--',linewidth=2.0,label='Slab')
 #
-#plt.plot(np.log10(hem['theta']),np.log10(hem['lc']),'g-',linewidth=2.0,label='Hemishpere')
+#plt.xlim(-1.75,0.25)
+#plt.ylim(-0.5,3.5)
+#plt.xticks(fontsize=15, rotation=0)
+#plt.yticks(fontsize=15, rotation=0)
+#plt.ylabel('Compactness (l)',fontsize=14)
+#plt.xlabel(r'$\Theta$ ($kT_e/mc^2$)',fontsize=14)
+#plt.legend(loc=1, fontsize=14)
 #
-#
-#
-#plt.legend(fontsize=15) 
-#plt.ylabel('Compactness')
-#plt.xlabel(r'$\Theta$ $keV/mc^2$')
 #plt.tight_layout()
+#plt.savefig('../figures/paper/compac_BIN.pdf', dpi=400)
 #
-#plt.show()   
 #
-
-#---------------------------------------------------------------
-#----------DUAL AXES plot---------------------------------------
-#---------------------------------------------------------------
-#fig, [ax1, ax2] = plt.subplots(1,2,figsize=(9,3))
-
-plt.figure(figsize=(10,8))
-plt.rcParams['xtick.top'] = True
-plt.rcParams['ytick.right'] = True
-
-plt.plot(go_tbl['theta'],go_tbl['lcom'],'ks',ms=6,mec='k',mfc='k',label=r'Constrained $kT_e$')
-plt.errorbar(go_tbl['theta'],go_tbl['lcom'],
-                xerr=[(go_tbl['theta']-go_tbl['theta_l']),(go_tbl['theta_h']-go_tbl['theta'])],
-                yerr=False,
-                fmt='none',
-                capsize=3,
-                ecolor='k',
-                elinewidth=0.5
-                )
-
-plt.plot(lo_tbl['theta'],lo_tbl['lcom'],'ko',ms=7,mec='k',mfc='none',label=r'Unconstrained $kT_e$')
-plt.errorbar(lo_tbl['theta'],lo_tbl['lcom'],
-                xerr=lo_tbl['theta']/2,
-                xlolims=True,
-                yerr=False,
-                fmt='none',
-                capsize=3,
-                ecolor='k',
-                elinewidth=0.5
-                )
-
-#ax1.plot(trialtheta,brem,'b--')
-#ax1.plot(trialtheta,elpr,'r--',label=r'$e^--p^+$')
-#ax1.plot(trialtheta,elel,'y--',label=r'$e^--e^-$')
-#plt.plot(trialtheta,lsven,'b:',label='Svensson')
-plt.plot(hem['theta'],hem['lc'],'g--',linewidth=2.0,label='Hemisphere')
-plt.plot(slab['theta'],slab['lc'],'r--',linewidth=2.0,label='Slab')
-
-plt.xticks(fontsize=15, rotation=0)
-plt.yticks(fontsize=15, rotation=0)
-plt.ylabel('Compactness (l)',fontsize=14)
-plt.xlabel(r'$\Theta$ ($kT_e/mc^2$)',fontsize=14)
-plt.xscale('log')
-plt.yscale('log')
-plt.xlim(0.01,1.1)
-plt.ylim(0.1,1000)
-
-plt.legend(loc=4, fontsize=14)
-plt.tight_layout()
-plt.savefig('../figures/paper/compac_scatter.pdf', dpi=400)
-#-------------------------------------------------------------------
-#       BIN
-#--------------------------------------------------------------------------
-plt.figure(figsize=(10,8))
-plt.rcParams['xtick.top'] = True
-plt.rcParams['ytick.right'] = True
-plt.plot(bin_meanu1,bin_centersu1,'ks',ms=10,label='All sources')
-plt.errorbar(bin_meanu1,bin_centersu1,
-         xerr=bin_stdu1,
-         yerr=bin_widthu1,
-         fmt='k,',
-         capsize=3,
-         ecolor='k',
-         elinewidth=0.5
-         )
-
-plt.plot(bin_meanu2,bin_centersu2,'ko',ms=10,mfc='none',label='Only Detections')
-plt.errorbar(bin_meanu2,bin_centersu2,
-         xerr=bin_stdu2,
-         yerr=bin_widthu2,
-         fmt='k,',
-         capsize=3,
-         ecolor='k',
-         elinewidth=0.5
-         )
-
-plt.plot(ric['theta'],ric['lc'],'kD',ms=10,mfc='k',label='Ricci+18')
-plt.errorbar(ric['theta'],ric['lc'],
-         xerr=[(ric['theta']-ric['theta_l']),(ric['theta_u']-ric['theta'])],
-         yerr=[(ric['lc']-ric['lc_l']),(ric['lc_u']-ric['lc'])],
-         fmt='k,',
-         capsize=3,
-         ecolor='k',
-         elinewidth=0.5,
-         )
-
-plt.plot(np.log10(hem['theta']),np.log10(hem['lc']),'g--',linewidth=2.0,label='Hemisphere')
-plt.plot(np.log10(slab['theta']),np.log10(slab['lc']),'r--',linewidth=2.0,label='Slab')
-
-plt.xlim(-1.75,0.25)
-plt.ylim(-0.5,3.5)
-plt.xticks(fontsize=15, rotation=0)
-plt.yticks(fontsize=15, rotation=0)
-plt.ylabel('Compactness (l)',fontsize=14)
-plt.xlabel(r'$\Theta$ ($kT_e/mc^2$)',fontsize=14)
-plt.legend(loc=1, fontsize=14)
-
-plt.tight_layout()
-plt.savefig('../figures/paper/compac_BIN.pdf', dpi=400)
-
-
-#----------------------------------------------------------------------
-#----ONE FIGURE TWO PANELS---------------------------------------------
-#----------------------------------------------------------------------
-
+##----------------------------------------------------------------------
+##----ONE FIGURE TWO PANELS---------------------------------------------
+##----------------------------------------------------------------------
+#
 fig, [ax1, ax2] = plt.subplots(1,2,figsize=(14,6))
 plt.rcParams['xtick.top'] = True
 plt.rcParams['ytick.right'] = True
@@ -680,7 +681,7 @@ ax2.errorbar(bin_meanu1,bin_centersu1,
          ecolor='k',
          elinewidth=0.5
          )
------- END OF KM POINTS-------------------------
+#------ END OF KM POINTS-------------------------
 ax2.plot(bin_meanu2,bin_centersu2,'ko',ms=10,mfc='none',label='Only Detections')
 ax2.errorbar(bin_meanu2,bin_centersu2,
          xerr=bin_stdu2,
