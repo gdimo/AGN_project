@@ -10,7 +10,7 @@ import numpy as np
 from scipy import stats
 #Load data files
 
-all_tbl = Table.read("../data/all_table.csv", format='csv')
+all_tbl = Table.read("./data/all_table.csv", format='csv')
 
 #-----------------------------------------------------------------------------
 #Define useful formulas
@@ -89,10 +89,10 @@ elel = el_el(trialtheta)
 lsven = Svenson(trialtheta)
 # # 
 # #Slab
-slab = Table.read('../data/new_data_all/slabfabian.csv', format='csv')
+slab = Table.read('./data/slabfabian.csv', format='csv')
 # #Hemishpere
-hem = Table.read('../data/new_data_all/Hem_kamraj.csv', format='csv')
-ric = Table.read('../data/new_data_all/ricci.csv', format='csv')
+hem = Table.read('./data/Hem_kamraj.csv', format='csv')
+ric = Table.read('./data/ricci.csv', format='csv')
 ric['theta'] = np.log10(ric['theta'])
 ric['theta_l'] = np.log10(ric['theta_l'])
 ric['theta_u'] = np.log10(ric['theta_u'])
