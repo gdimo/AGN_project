@@ -55,33 +55,33 @@ fig, [ax1, ax2] = plt.subplots(2,1,figsize=(6,10))
 #plt.rcParams['xtick.top'] = True
 #plt.rcParams['ytick.right'] = True
 
-ax1.hist(go_tbl['KT'],bins=7,histtype='step',color='b',density=1,
+ax1.hist(go_tbl['KT'],bins=7,histtype='step',color='b',
         alpha=1,linewidth=2, edgecolor='b', label=r'Constrained $kT_e$')
 
-ax1.hist(lo_tbl['KT'],bins=7,histtype='step',color='k',density=1,
+ax1.hist(lo_tbl['KT'],bins=7,histtype='step',color='k',
         alpha=1,linewidth=2,linestyle='dotted', edgecolor='black', label='Low limit fixed values')
 
 ax1.tick_params(axis='both', which='major', labelsize=10, direction='in')
 #ax1.set_xticks(fontsize=15)
 #ax1.set_yticks([5.0,10.0,15.0,20.0,25.0,30.0],[5,10,15,20,25,30])
-ax1.yaxis.set_major_formatter(mtick.PercentFormatter(xmax=1,decimals=0))
+#ax1.yaxis.set_major_formatter(mtick.PercentFormatter(xmax=1,decimals=0))
 
 
 
 ax1.legend()
 
-ax2.bar(bcenter,bval_n,width=24,
+ax2.bar(bcenter,bval,width=24,
             color='none',alpha=1,edgecolor='black',linewidth=2,linestyle='dashed',
             label='KM estimator')
 
-ax2.hist(go_tbl['KT'],bins=7,histtype='step',color='b',density=1,
+ax2.hist(go_tbl['KT'],bins=7,histtype='step',color='b',
         alpha=1,linewidth=2, edgecolor='b', label=r'Constrained $kT_e$')
 
 ax2.legend()
 #plt.grid(b=True, which='major', ls=':')
 plt.xlabel(r'Plasma Temperature $kT_e$',fontsize=15)
 ax2.tick_params(axis='both', which='major', direction='in')
-ax2.yaxis.set_major_formatter(mtick.PercentFormatter(xmax=1,decimals=0))
+#ax2.yaxis.set_major_formatter(mtick.PercentFormatter(xmax=1,decimals=0))
 
 plt.xticks(fontsize=10, rotation=0)
 #plt.yticks([5.0,10.0,15.0,20.0,25.0,30.0],[5,10,15,20,25,30],fontsize=10, rotation=0)
