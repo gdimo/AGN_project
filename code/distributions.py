@@ -63,7 +63,7 @@ ax1.hist(lo_tbl['KT'],bins=7,histtype='step',color='k',
 
 ax1.tick_params(axis='both', which='major', labelsize=10, direction='in')
 #ax1.set_xticks(fontsize=15)
-#ax1.set_yticks([5.0,10.0,15.0,20.0,25.0,30.0],[5,10,15,20,25,30])
+ax1.set_yticks([5.0,10.0,15.0,20.0,25.0,30.0],[5,10,15,20,25,30])
 #ax1.yaxis.set_major_formatter(mtick.PercentFormatter(xmax=1,decimals=0))
 
 
@@ -107,7 +107,7 @@ ax1.hist(lo_tbl['Tau'],bins=7,histtype='step',color='k',#density=1,
 
 ax1.tick_params(axis='both', which='major', labelsize=10, direction='in')
 #ax1.set_xticks(fontsize=15)
-#ax1.set_yticks([0.0,0.05,0.10,0.15,0.20,0.25,0.30,0.35],[0,5,10,15,20,25,30,35])
+ax1.set_yticks([0.0,0.05,0.10,0.15,0.20,0.25,0.30,0.35],[0,5,10,15,20,25,30,35])
 #ax1.yaxis.set_major_formatter(mtick.PercentFormatter(xmax=1,decimals=0))
 
 
