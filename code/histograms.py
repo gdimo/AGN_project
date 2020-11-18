@@ -21,7 +21,7 @@ go_tbl = all_tbl[~msk_kt]
 
 #create KT histogram
 
-hist, edges = np.histogram(go_tbl['KT'],bins=7, normed=True)
+hist, edges = np.histogram(go_tbl['KT'],bins=7,normed=True)
 center = np.array([edges+(12)])
 height = hist*21.5
 print(type(edges))
@@ -30,8 +30,11 @@ print(center)
 print(height)
 center_2 = np.array([20.57, 42.19, 63.80, 85.42, 128.66, 150.28, 171.9])
 
+x = edges[:-1]
 
-plt.bar(center_2,height,width=21,
+plt.bar(edges[:-1], hist.astype(np.float32)/hist.sum(), width=(edges[1]-edges[0]),
+            #align='center',
+            bottom=None,
             color='none',alpha=1,edgecolor='black',linewidth=2,linestyle='dashed',
             label='good')
 #
