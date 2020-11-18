@@ -55,15 +55,17 @@ fig, [ax1, ax2] = plt.subplots(2,1,figsize=(6,10))
 #plt.rcParams['xtick.top'] = True
 #plt.rcParams['ytick.right'] = True
 
-ax1.hist(go_tbl['KT'],bins=7,histtype='step',color='b',
+ax1.hist(go_tbl['KT'],bins=7,weights=np.ones_like(go_tbl['KT']/len(go_tbl['KT'])),
+        density=True,histtype='step',color='b',
         alpha=1,linewidth=2, edgecolor='b', label=r'Constrained $kT_e$')
 
-ax1.hist(lo_tbl['KT'],bins=7,histtype='step',color='k',
+ax1.hist(lo_tbl['KT'],bins=7,weights=np.ones_like(lo_tbl['KT']/len(lo_tbl['KT'])),histtype='step',color='k',
+        density=True,
         alpha=1,linewidth=2,linestyle='dotted', edgecolor='black', label='Low limit fixed values')
 
 ax1.tick_params(axis='both', which='major', labelsize=10, direction='in')
 #ax1.set_xticks(fontsize=15)
-ax1.set_yticks([5.0,10.0,15.0,20.0,25.0,30.0],[5,10,15,20,25,30])
+#ax1.set_yticks([5.0,10.0,15.0,20.0,25.0,30.0],[5,10,15,20,25,30])
 #ax1.yaxis.set_major_formatter(mtick.PercentFormatter(xmax=1,decimals=0))
 
 
